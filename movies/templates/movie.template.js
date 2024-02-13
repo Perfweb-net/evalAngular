@@ -1,0 +1,1 @@
+var MovieTemplate = `<h1>test movie</h1>`;

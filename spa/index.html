@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr" lang="fr" ng-app="spaApp">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"> </script> 
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"> </script> 
+    </head>
+
+	<body>
+            <h1>SPA</h1>
+
+            <a href="#/">0</a>
+            <a href="#/1">1</a>
+            <a href="#/2">2</a>
+            
+            <div ng-view></div>
+
+            <script>
+                var app = angular.module('spaApp', ['ngRoute']);
+                app.config(function ($routeProvider){
+                    $routeProvider
+                        .when('/', {
+                            templateUrl: 'zero.html',
+                            controller: "ZeroController",
+                        })
+                        .when('/1', {
+                            templateUrl: 'first.html',
+                            controller: 'FirstController'
+                        })
+                        .when('/2', {
+                            templateUrl: 'second.html',
+                            controller: 'SecondController',
+                        })
+                        .otherwise({redirectTo: "/"});
+                })
+
+        app.controller('FirstController', function ($scope) { 
+            $scope.message = 'Premier controller'; 
+        }); 
+        app.controller('SecondController', function ($scope) { 
+            $scope.message = 'Deuxieme controller'; 
+        }); 
+        app.controller('ZeroController', function ($scope) { 
+            $scope.message = 'Zero controllers'; 
+        }); 
+            </script>
+    </body>
+</html>

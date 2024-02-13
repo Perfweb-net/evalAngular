@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr" lang="fr" ng-app="moviesApp">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"> </script> 
+        <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"> </script> 
+        <script src="./app.js"></script>
+        <script src="./controllers/login.controller.js"></script>
+        <script src="./controllers/movie.controller.js"></script>
+        <script src="./controllers/movies.controller.js"></script>
+        <script src="./controllers/admin.controller.js"></script>
+        <script src="./components/login.component.js"></script>
+        <script src="./components/movie.component.js"></script>
+        <script src="./components/movies.component.js"></script>
+        <script src="./components/admin.component.js"></script>
+    </head>
+
+	<body>
+            <h1>Pierre Movies</h1>
+
+            <a href="#/">Home</a>
+            <a href="#/login">login</a>
+            <a href="#/movie">One movie</a>
+            <a href="#/movies">Movies</a>
+            
+            <div ng-view></div>
+
+            <script>
+                moviesApp.config(function ($routeProvider){
+                    $routeProvider
+                        .when('/', {
+                            templateUrl: './templates/movies.component.html',
+                            controller: "MoviesController",
+                        })
+                        .when('/movie', {
+                            templateUrl: './templates/movie.component.html',
+                            controller: 'MovieController',
+                        })
+                        .when('/login', {
+                            templateUrl: './templates/login.component.html',
+                            controller: 'LoginController'
+                        })
+                        .when('/admin', {
+                            templateUrl: './templates/admin.component.html',
+                            controller: 'AdminController'
+                        })
+                        .otherwise({redirectTo: "/"});
+                })
+
+                let movies = []
+
+                moviesApp.controller('MoviesController', function ($scope) { 
+                }); 
+
+                moviesApp.controller('MovieController', function ($scope) { 
+                }); 
+
+                moviesApp.controller('LoginController', function ($scope) { 
+                }); 
+
+                moviesApp.controller('AdminController', function ($scope) { 
+                }); 
+            </script>
+    </body>
+</html>

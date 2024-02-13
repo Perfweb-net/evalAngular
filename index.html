@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    </head>
+
+	<body ng-app="" ng-init="name='placeholder'">
+        <header>Header</header>
+        <main>
+            main
+           <p>name : <input type="text" ng-model="name"></p>
+           <p ng-bind="name"></p>
+           <p>{{name}}</p>
+
+           <table>
+            <tr ng-repeat="n in [].constructor(10) track by $i">
+                <td> {{ $i }}</td>
+            </tr>
+           </table>
+
+           <p><input type="text" style="background-color:'{{color}}'" ng-model="color"></p>
+        </main>
+        <footer>Footer</footer>
+    </body>
+</html>

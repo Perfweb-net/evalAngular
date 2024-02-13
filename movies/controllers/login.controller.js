@@ -1,0 +1,3 @@
+moviesApp.controller('LoginController', function(){
+
+})

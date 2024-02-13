@@ -1,0 +1,3 @@
+moviesApp.controller('MoviesController', function(){
+    
+})
